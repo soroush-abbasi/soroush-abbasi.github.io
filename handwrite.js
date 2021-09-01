@@ -133,7 +133,7 @@ function initModelFont()
 	//a = 61
 	for(var i = 0 ; i < 26 ; i++)
 	{
-		var txt = readTextFile("Font/"+ String.fromCharCode(i+97) +".mFont") ;
+		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/"+ String.fromCharCode(i+97) +".mFont") ;
 		if( i == 8)// i
 			myFont[i+32] = mFontParser(txt , 0.6 , 0.6) ;
 		else if( i == 0)// a
@@ -146,7 +146,7 @@ function initModelFont()
 	//A =
 	for(var i = 0 ; i < 26 ; i++)
 	{
-		var txt = readTextFile("Font/_"+ String.fromCharCode(i+65) +".mFont") ;
+		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/_"+ String.fromCharCode(i+65) +".mFont") ;
 		if( i == 0)//A
 			myFont[i] = mFontParser(txt , 1.5 , 1.5) ;
 		else if( i == 1)//b
