@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Assistant:200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Soroush Abbasi Koohpayegani</title>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#c85b00">
+<meta name="apple-mobile-web-app-title" content="Soroush">
+<meta name="application-name" content="Soroush">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+<script type="text/javascript">
+<!--
+if (screen.width <= 699) {
+document.location = "mobile.html";
+}
+//-->
+</script>
+
+
+<script id="FShader" type="x-shader/x-fragment">
+     precision mediump float ;
+     void main()
+     {
+             gl_FragColor = vec4(0.9 , 0.61 , 0.48 , 1.0) ;
+     }
+ </script>
+
+ <script id="VShader" type="x-shader/x-fragment">
+     attribute vec4 a_Position ;
+attribute float a_Scale ;
+attribute float a_CursorPosition ;
+attribute float a_CursorPosition_y ;
+attribute vec4 a_FontPosition ;
+vec4 position ;
+     void main()
+     {
+   position = a_Position * a_Scale + a_FontPosition ;
+         position.x += a_CursorPosition ;
+   position.y += a_CursorPosition_y + 0.5;
+   position.x *= 0.42 ;
+   position.x -= 0.7 ;
+         gl_Position = position * a_Scale ;
+     }
+ </script>
+
+ <script src="lib/webgl-utils.js"></script>
+   <script src="lib/webgl-debug.js"></script>
+   <script src="lib/cuon-utils.js"></script>
+   <script src="handwrite.js"></script>
+
+</head>
+
+
+
+<body onload="main()">
+
+
+  <div id="canvas-container" class="sticky" >
+  </div>
+  <div id="info-writing" width="100%" height="30%" >
+    <canvas id="webgl" width="2100" height="500">
+  	  Please use a browser that supports "canvas"
+  	</canvas>
+  </div>
+
+
+  <div id="info-bio">
+
+    <img src="images/s1.png"/>
+    <div>
+      <h1> About Me </h1>
+
+        <h3>I am a PhD student in computer science at University of Maryland Baltimore County, advised by Hamed Pirsiavash. Before this, I got my BS in computer science from Sharif University of Technology.
+
+          <a href="CV(Soroush Abbasi Koohpayegani).pdf" style="color: hotpink"> Get my CV.</a>
+          My research is about machine learning,computer vision. In particular, I am intrested in
+            self-supervised learning.</h3>
+
+
+    </div>
+  </div>
+
+  <div id="info-experinces">
+
+
+    <div>
+      <img src="images/Dr.mac.png"/>
+
+
+      <h1> My Experiences  </h1>
+      <h3>I worked at BasirTech as a computer vision researcher under the supervision of Prof
+      Mostafa Kamali Tabrizi. My project was about Real-time Virtual Advertising in Broadcast systems.
+      You can watch the results of my project in my <a href="https://www.youtube.com/channel/UCL-E2c0R_cuGuigA6F76Uqg" style="color: hotpink">YouTube channel</a>.
+    </h3>
+
+    <h3>I was Teacher-Assistant for the Computer Graphics course at Sharif University for Spring 2018 semester. I designed students assignments and created a webpage for
+      their assignments. <a href="My Website/ComputerGraphic.tech/index.html" style="color: hotpink">You can visit it here.</a>.
+  </h3>
+
+  <h3>During the first and second years of University in Sharif, one of my friends and I started a start-up. We developed some applications in iOS/Android. You can download
+    one of our games from  <a href="https://cafebazaar.ir/app/com.DrMac.watercolor?l=en" style="color: hotpink">here</a>.
+  </h3>
+
+    </div>
+  </div>
+
+  <div id="info-thank">
+
+    <div>
+      <h1> Publications </h1>
+
+
+      <h3> CompRess : Self-Supervised Learning by Compressing Representations <a href="https://umbcvision.github.io/CompRess/" style="color: hotpink"> Link to project page.</a></h3>
+
+
+
+    </div>
+  </div>
+
+<script src="pixi.js" type="text/javascript"></script>
+<script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>
