@@ -1,0 +1,161 @@
+body {
+  margin:0px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000 ;
+  font-color: #FFFFFF;
+  font-family: 'Assistant', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+h1
+{
+  color: #888 ;
+}
+
+div.sticky
+{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0 ;
+  z-index: -1 ;
+}
+
+#canvas-container
+{
+    margin:0 ;
+    z-index: -1;
+
+}
+
+#info-writing
+{
+  margin: 10%;
+  padding: 0px ;
+  margin-bottom: 50% ;
+  background-color: rgba(200, 200, 200, .0);
+  z-index: 1;
+}
+
+#info
+{
+
+  margin: 10%;
+  padding: 70px ;
+  background-color: rgba(200, 200, 200, .0);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  box-shadow:
+        0 0 10px 5px #fff,  /* inner white */
+        0 0 15px 10px #f0f; /* middle magenta */
+
+}
+
+#info-bio
+{
+  margin: 0px;
+  padding: 0px ;
+  background-color: rgba(200, 200, 200, .00);
+  display: flex ;
+
+  height: auto ;
+
+  font-size: 20px
+}
+#info-bio img
+{
+  height: 500px;
+  margin: 20px;
+  padding: 0px ;
+}
+
+#info-bio h3,h2
+{
+  margin: 10%;
+  padding: 0px ;
+  width: 50% ;
+}
+
+#info-bio h1
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px ;
+  width: 50% ;
+}
+
+
+#info-experinces
+{
+  margin: 0px;
+  padding: 0px ;
+  background-color: rgba(200, 200, 200, .00);
+  display: flex ;
+  position: relative;
+  width: 100% ;
+  height: 700px ;
+
+  font-size: 20px
+}
+
+#info-experinces img
+{
+  top: 0; right: 0; border: 0 ;
+  margin: 50px;
+  padding: 50px ;
+  float: right ;
+
+  height: 40%;
+}
+
+
+#info-experinces h1
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px ;
+  width: 50% ;
+}
+
+#info-experinces h3,h2
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px ;
+  width: 50% ;
+}
+
+#info-bio p,h1,h2,h3,h4 {
+  color: #ffc0af;
+}
+
+
+
+#info-thank
+{
+  margin: 0px;
+  padding: 0px ;
+  background-color: rgba(200, 200, 200, .00);
+  display: flex ;
+  width: 100% ;
+  height: 1000px ;
+
+  font-size: 20px
+}
+#info-thank img
+{
+  height: 70%;
+  padding: 0px ;
+}
+
+#info-thank h3,h1,h2,h4
+{
+  width : 100% ;
+
+  margin: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 0px ;
+}
+
+canvas{width:100%;height:100%; }
