@@ -17,7 +17,31 @@
 <meta name="theme-color" content="#ffffff">
 
 
+<script id="FShader" type="x-shader/x-fragment">
+     precision mediump float ;
+     void main()
+     {
+             gl_FragColor = vec4(0.9 , 0.61 , 0.48 , 1.0) ;
+     }
+ </script>
 
+ <script id="VShader" type="x-shader/x-fragment">
+     attribute vec4 a_Position ;
+attribute float a_Scale ;
+attribute float a_CursorPosition ;
+attribute float a_CursorPosition_y ;
+attribute vec4 a_FontPosition ;
+vec4 position ;
+     void main()
+     {
+   position = a_Position * a_Scale + a_FontPosition ;
+         position.x += a_CursorPosition ;
+   position.y += a_CursorPosition_y + 0.5;
+   position.x *= 0.42 ;
+   position.x -= 0.7 ;
+         gl_Position = position * a_Scale ;
+     }
+ </script>
 
 
 
