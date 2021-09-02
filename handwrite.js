@@ -354,7 +354,7 @@ function draw(gl)
 		  	continue ;
 		  // console.log(delta_x , delta_y)
 
-		  thickness = 0.03
+		  thickness = 0.07
 		  thickness_dir_x = delta_y
 		  thickness_dir_y = -delta_x
 		  norm = Math.sqrt(Math.pow(thickness_dir_x,2) + Math.pow(thickness_dir_y,2))
