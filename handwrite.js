@@ -277,6 +277,15 @@ function main() {
 	// // gl.lineWidth(1.7);
 	// gl.lineWidth(minSize*line_width + maxSize*(1-line_width));
 	gl.viewport(0 , 0 , 1700 , 500) ;
+	VSHADER_SOURCE = "
+	precision mediump float ;
+     void main()
+     {
+			gl_FragColor = vec4(0.2 , 0.33 , 0.50 , 1.0) ;
+			//gl_FragColor = vec4(0.84 , 0.40 , 0.20 , 1.0) ;
+             //gl_FragColor = vec4(0.67 , 0.37 , 0.53 , 1.0) ;
+     }
+	 "
   	initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE) ;
 
 
