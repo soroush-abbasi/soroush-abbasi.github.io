@@ -276,7 +276,7 @@ function main() {
 	// const [minSize, maxSize] = gl.getParameter(gl.ALIASED_LINE_WIDTH_RANGE);
 	// // gl.lineWidth(1.7);
 	// gl.lineWidth(minSize*line_width + maxSize*(1-line_width));
-	gl.viewport(0 , 0 , 2100 , 500) ;
+	gl.viewport(0 , 0 , 3000 , 1000) ;
   	initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE) ;
 
 
