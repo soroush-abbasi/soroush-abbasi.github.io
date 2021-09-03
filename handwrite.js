@@ -6,12 +6,12 @@ var VSHADER_SOURCE = document.getElementById('VShader').textContent ;
 
 var brushColorSet = [
 "gl_FragColor = vec4(0.2 , 0.33 , 0.50 , 1.0) ;",
-"gl_FragColor = vec4(0.84 , 0.40 , 0.20 , 1.0) ;"
-,"gl_FragColor = vec4(0.67 , 0.37 , 0.53 , 1.0) ;"
-,"gl_FragColor = vec4(0.5 , 0.33 , 0.50 , 1.0) ;"
-,"gl_FragColor = vec4(0.2 , 0.9 , 0.50 , 1.0)" ;
-,"gl_FragColor = vec4(0.8 , 0.56 , 0.50 , 1.0)" ;
-"gl_FragColor = vec4(0.2 , 0.33 , 0.50 , 1.0)" ;
+"gl_FragColor = vec4(0.84 , 0.40 , 0.20 , 1.0) ;",
+"gl_FragColor = vec4(0.67 , 0.37 , 0.53 , 1.0) ;",
+"gl_FragColor = vec4(0.5 , 0.33 , 0.50 , 1.0) ;",
+"gl_FragColor = vec4(0.2 , 0.9 , 0.50 , 1.0) ;",
+"gl_FragColor = vec4(0.8 , 0.56 , 0.50 , 1.0) ;",
+"gl_FragColor = vec4(0.2 , 0.33 , 0.50 , 1.0) ;"
 ]
 var brushSelector = getRandomInt(7)
 FSHADER_SOURCE = "precision mediump float ; void main() {" + brushColorSet[brushSelector] + "}"
