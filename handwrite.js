@@ -284,7 +284,7 @@ function main() {
 
   // Set the vertex information
 
-  gl.clearColor(0.82, 0.82, 0.82, 0.0);
+  gl.clearColor(0.99, 0.95, 0.90, 0.0);
 
   var FSIZE = 4 ;
   var BYTE_PER_VERTEX = 7 ;
