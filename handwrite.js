@@ -9,9 +9,9 @@ var brushColorSet = [
 "gl_FragColor = vec4(0.84 , 0.40 , 0.20 , 1.0) ;", // Orange
 "gl_FragColor = vec4(0.67 , 0.37 , 0.53 , 1.0) ;", // Purple
 "gl_FragColor = vec4(0.0 , 0.36 , 0.22 , 1.0) ;", // Green
-"gl_FragColor = vec4(0.0 , 0.33 , 0.33 , 1.0) ;", //
+"gl_FragColor = vec4(1.0 , 0.51 , 0.79 , 1.0) ;", // Pink
 "gl_FragColor = vec4(0.73 , 0.24 , 0.25 , 1.0) ;", // Red
-"gl_FragColor = vec4(0.33 , 0.0 , 0.0 , 1.0) ;" //
+"gl_FragColor = vec4(0.56 , 0.59 , 1.0 , 1.0) ;" // Light Purple
 ]
 var brushSelector = getRandomInt(7)
 FSHADER_SOURCE = "precision mediump float ; void main() {" + brushColorSet[brushSelector] + "}"
