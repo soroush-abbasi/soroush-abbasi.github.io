@@ -202,19 +202,7 @@ function drawString()
 {
 
 
-	// const data = JSON.stringify(myFont);
-	// console.log(myFont[0])
-
-	// var a = window.document.createElement('a');
-	// a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
-	// a.download = 'font.json';
 	
-	// // Append anchor to body.
-	// document.body.appendChild(a);
-	// a.click();
-	
-	// // Remove anchor from body
-	// document.body.removeChild(a);
 
 	
 	var wordsY = [0,1] ;
@@ -234,13 +222,25 @@ function drawString()
     var cursorPosition = headOfTheLine ;
 		wordIndex = 0 ;
 
-    var data_dict = [] ; 
+    var data_dict = {} ; 
     for(var k = 0 ; k < keyBufferSize ; k++)
 	    {
 		var key = keyBuffer[k] ;   
-		data_dict[key] = myFont[key]
-		console.log(data_dict)
+		data_dict[key] = {'splines':myFont[key]['splines'], 'numOfSplines':myFont[key]['numOfSplines'], 'FontPosition',myFont[key]['FontPosition']}
 	    }
+	const data = JSON.stringify(data_dict);
+	
+	var a = window.document.createElement('a');
+	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
+	a.download = 'font.json';
+	
+	// Append anchor to body.
+	document.body.appendChild(a);
+	a.click();
+	
+	// Remove anchor from body
+	document.body.removeChild(a);
+
     for(var k = 0 ; k < keyBufferSize ; k++)
     {
 		var key = keyBuffer[k] ;
