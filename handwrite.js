@@ -175,8 +175,20 @@ function initModelFont()
 	}
 	
 
+	
 	const data = JSON.stringify(myFont);
 	console.log(data)
+
+	var a = window.document.createElement('a');
+	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
+	a.download = 'font.json';
+	
+	// Append anchor to body.
+	document.body.appendChild(a);
+	a.click();
+	
+	// Remove anchor from body
+	document.body.removeChild(a);
 
 	// // writing the JSON string content to a file
 	// fs.writeFile("data.json", data, (error) => {
