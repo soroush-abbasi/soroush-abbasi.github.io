@@ -203,7 +203,7 @@ function drawString()
 
 
 	const data = JSON.stringify(myFont);
-	// console.log(myFont)
+	console.log(myFont[0])
 
 	var a = window.document.createElement('a');
 	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
