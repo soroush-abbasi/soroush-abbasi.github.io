@@ -177,7 +177,7 @@ function initModelFont()
 
 	
 	const data = JSON.stringify(myFont);
-	console.log(data)
+	console.log(myFont)
 
 	var a = window.document.createElement('a');
 	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
