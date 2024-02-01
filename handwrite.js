@@ -226,7 +226,7 @@ function drawString()
     for(var k = 0 ; k < keyBufferSize ; k++)
 	    {
 		var key = keyBuffer[k] ;   
-		data_dict[key] = {'splines':myFont[key]['splines'], 'numOfSplines':myFont[key]['numOfSplines'], 'FontPosition',myFont[key]['FontPosition']}
+		data_dict[key] = {'splines':myFont[key]['splines'], 'numOfSplines':myFont[key]['numOfSplines'], 'FontPosition',myFont[key]['FontPosition']};
 	    }
 	const data = JSON.stringify(data_dict);
 	
