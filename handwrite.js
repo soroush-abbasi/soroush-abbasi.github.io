@@ -225,10 +225,11 @@ function drawString()
     var data_dict = {} ; 
     for(var k = 0 ; k < keyBufferSize ; k++)
 	    {
-	 	if(key == -33)
-			continue; 
+	 	 
 		    
 		var key = keyBuffer[k] ;  
+	    	if(key == -33)
+			continue;
 		var cp_list = []
 	    	for(var i = 0 ; i < myFont[key]['numOfSplines'] ; i++)
 	    	{
