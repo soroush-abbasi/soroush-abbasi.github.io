@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -143,6 +145,9 @@ function mFontParser(txt , scaleX , scaleY)
 	return font ;
 }
 
+
+
+
 function initModelFont()
 {
 	//a = 61
@@ -169,6 +174,22 @@ function initModelFont()
 		else
 			myFont[i] = mFontParser(txt,1.0 , 1.0) ;
 	}
+
+	const data = JSON.stringify(myFont);
+
+	// writing the JSON string content to a file
+	fs.writeFile("data.json", data, (error) => {
+	// throwing the error
+	// in case of a writing problem
+	if (error) {
+	// logging the error
+	console.error(error);
+	
+	throw error;
+	}
+	
+	console.log("data.json written correctly");
+	});
 
 }
 
