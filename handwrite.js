@@ -17,13 +17,14 @@ var brushColorSet = [
 var brushSelector = getRandomInt(7)
 FSHADER_SOURCE = "precision mediump float ; void main() {" + brushColorSet[brushSelector] + "}"
 	 
-const fontFile = require('./Font/font.json');	 
+	 
 var vertices = [] ;
 var lines = [] ;
 var numOfSplines = 0 ;
 var splinesControlPoints ;
 var animationTime = 2000 ;
-var myFont = [] ;
+// var myFont = [] ;
+var myFont = JSON.parse($.getJSON({'url': "https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/font.json", 'async': false}).responseText);
 var spaceDistance = 0.4 ;
 var verticesBuffer = [] ;
 var headOfTheLine = -2.5 ;
@@ -150,32 +151,32 @@ function mFontParser(txt , scaleX , scaleY)
 function initModelFont()
 {
 	// Old script to read from each files, slow due to multiple requests
-	// //a = 61
-	// for(var i = 0 ; i < 26 ; i++)
-	// {
-	// 	var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/"+ String.fromCharCode(i+97) +".mFont") ;
-	// 	if( i == 8)// i
-	// 		myFont[i+32] = mFontParser(txt , 0.6 , 0.6) ;
-	// 	else if( i == 0)// a
-	// 		myFont[i+32] = mFontParser(txt , 0.7 , 0.7) ;
-	// 	else if( i == 1)//b
-	// 		myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
-	// 	else
-	// 		myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
-	// }
-	// //A =
-	// for(var i = 0 ; i < 26 ; i++)
-	// {
-	// 	var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/_"+ String.fromCharCode(i+65) +".mFont") ;
-	// 	if( i == 0)//A
-	// 		myFont[i] = mFontParser(txt , 1.5 , 1.5) ;
-	// 	else if( i == 1)//b
-	// 		myFont[i] = mFontParser(txt , 1.0 , 1.0) ;
-	// 	else
-	// 		myFont[i] = mFontParser(txt,1.0 , 1.0) ;
-	// }
+	//a = 61
+	for(var i = 0 ; i < 26 ; i++)
+	{
+		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/"+ String.fromCharCode(i+97) +".mFont") ;
+		if( i == 8)// i
+			myFont[i+32] = mFontParser(txt , 0.6 , 0.6) ;
+		else if( i == 0)// a
+			myFont[i+32] = mFontParser(txt , 0.7 , 0.7) ;
+		else if( i == 1)//b
+			myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
+		else
+			myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
+	}
+	//A =
+	for(var i = 0 ; i < 26 ; i++)
+	{
+		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/_"+ String.fromCharCode(i+65) +".mFont") ;
+		if( i == 0)//A
+			myFont[i] = mFontParser(txt , 1.5 , 1.5) ;
+		else if( i == 1)//b
+			myFont[i] = mFontParser(txt , 1.0 , 1.0) ;
+		else
+			myFont[i] = mFontParser(txt,1.0 , 1.0) ;
+	}
 
-	myFont = fontFile ; 
+	
 	
 
 }
@@ -340,7 +341,7 @@ function main() {
   	initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE) ;
 
 
-  	initModelFont() ;
+  	// initModelFont() ;
 
   // Set the vertex information
 
