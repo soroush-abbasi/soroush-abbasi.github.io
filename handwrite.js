@@ -1,4 +1,4 @@
-const fs = require("fs");
+import * as fs from "fs";
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
