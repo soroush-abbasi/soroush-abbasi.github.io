@@ -233,6 +233,14 @@ function drawString()
     verticesBuffer = [] ;
     var cursorPosition = headOfTheLine ;
 		wordIndex = 0 ;
+
+    var data_dict = [] ; 
+    for(var k = 0 ; k < keyBufferSize ; k++)
+	    {
+		var key = keyBuffer[k] ;   
+		data_dict[key] = myFont[key]
+		console.log(data_dict)
+	    }
     for(var k = 0 ; k < keyBufferSize ; k++)
     {
 		var key = keyBuffer[k] ;
@@ -247,8 +255,8 @@ function drawString()
 	    mLines = [] ;
 	    var xBegin = 1000.0 ;
 	    var xEnd = -1000.0 ;
-	    console.log(key, myFont[key]['numOfSplines'])
-	    console.log(myFont)
+	    
+	    
 	    for(var i = 0 ; i < myFont[key]['numOfSplines'] ; i++)
 	    {
 				var cp = myFont[key]['splines'][i] ;
