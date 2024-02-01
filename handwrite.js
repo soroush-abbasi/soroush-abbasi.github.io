@@ -17,7 +17,7 @@ var brushColorSet = [
 var brushSelector = getRandomInt(7)
 FSHADER_SOURCE = "precision mediump float ; void main() {" + brushColorSet[brushSelector] + "}"
 	 
-	 
+const fontFile = require('./Font/font.json');	 
 var vertices = [] ;
 var lines = [] ;
 var numOfSplines = 0 ;
@@ -149,48 +149,34 @@ function mFontParser(txt , scaleX , scaleY)
 
 function initModelFont()
 {
-	//a = 61
-	for(var i = 0 ; i < 26 ; i++)
-	{
-		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/"+ String.fromCharCode(i+97) +".mFont") ;
-		if( i == 8)// i
-			myFont[i+32] = mFontParser(txt , 0.6 , 0.6) ;
-		else if( i == 0)// a
-			myFont[i+32] = mFontParser(txt , 0.7 , 0.7) ;
-		else if( i == 1)//b
-			myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
-		else
-			myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
-	}
-	//A =
-	for(var i = 0 ; i < 26 ; i++)
-	{
-		var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/_"+ String.fromCharCode(i+65) +".mFont") ;
-		if( i == 0)//A
-			myFont[i] = mFontParser(txt , 1.5 , 1.5) ;
-		else if( i == 1)//b
-			myFont[i] = mFontParser(txt , 1.0 , 1.0) ;
-		else
-			myFont[i] = mFontParser(txt,1.0 , 1.0) ;
-	}
-	
-
-	
-	
-
-	// // writing the JSON string content to a file
-	// fs.writeFile("data.json", data, (error) => {
-	// // throwing the error
-	// // in case of a writing problem
-	// if (error) {
-	// // logging the error
-	// console.error(error);
-	
-	// throw error;
+	// Old script to read from each files, slow due to multiple requests
+	// //a = 61
+	// for(var i = 0 ; i < 26 ; i++)
+	// {
+	// 	var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/"+ String.fromCharCode(i+97) +".mFont") ;
+	// 	if( i == 8)// i
+	// 		myFont[i+32] = mFontParser(txt , 0.6 , 0.6) ;
+	// 	else if( i == 0)// a
+	// 		myFont[i+32] = mFontParser(txt , 0.7 , 0.7) ;
+	// 	else if( i == 1)//b
+	// 		myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
+	// 	else
+	// 		myFont[i+32] = mFontParser(txt , 1.0 , 1.0) ;
 	// }
+	// //A =
+	// for(var i = 0 ; i < 26 ; i++)
+	// {
+	// 	var txt = readTextFile("https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/Font/_"+ String.fromCharCode(i+65) +".mFont") ;
+	// 	if( i == 0)//A
+	// 		myFont[i] = mFontParser(txt , 1.5 , 1.5) ;
+	// 	else if( i == 1)//b
+	// 		myFont[i] = mFontParser(txt , 1.0 , 1.0) ;
+	// 	else
+	// 		myFont[i] = mFontParser(txt,1.0 , 1.0) ;
+	// }
+
+	myFont = fontFile ; 
 	
-	// console.log("data.json written correctly");
-	// });
 
 }
 
@@ -222,34 +208,34 @@ function drawString()
     var cursorPosition = headOfTheLine ;
 		wordIndex = 0 ;
 
-    var data_dict = {} ; 
-    for(var k = 0 ; k < keyBufferSize ; k++)
-	    {
+ //    var data_dict = {} ; 
+ //    for(var k = 0 ; k < keyBufferSize ; k++)
+	//     {
 	 	 
 		    
-		var key = keyBuffer[k] ;  
-	    	if(key == -33)
-			continue;
-		var cp_list = []
-	    	for(var i = 0 ; i < myFont[key]['numOfSplines'] ; i++)
-	    	{
-			var cp = myFont[key]['splines'][i] ;
-			cp_list.push(cp)
-		}
-		data_dict[key] = {'splines':cp_list, 'numOfSplines':myFont[key]['numOfSplines'], 'FontPosition':myFont[key]['FontPosition']};
-	    }
-	const data = JSON.stringify(data_dict);
+	// 	var key = keyBuffer[k] ;  
+	//     	if(key == -33)
+	// 		continue;
+	// 	var cp_list = []
+	//     	for(var i = 0 ; i < myFont[key]['numOfSplines'] ; i++)
+	//     	{
+	// 		var cp = myFont[key]['splines'][i] ;
+	// 		cp_list.push(cp)
+	// 	}
+	// 	data_dict[key] = {'splines':cp_list, 'numOfSplines':myFont[key]['numOfSplines'], 'FontPosition':myFont[key]['FontPosition']};
+	//     }
+	// const data = JSON.stringify(data_dict);
 	
-	var a = window.document.createElement('a');
-	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
-	a.download = 'font.json';
+	// var a = window.document.createElement('a');
+	// a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
+	// a.download = 'font.json';
 	
-	// Append anchor to body.
-	document.body.appendChild(a);
-	a.click();
+	// // Append anchor to body.
+	// document.body.appendChild(a);
+	// a.click();
 	
-	// Remove anchor from body
-	document.body.removeChild(a);
+	// // Remove anchor from body
+	// document.body.removeChild(a);
 
     for(var k = 0 ; k < keyBufferSize ; k++)
     {
