@@ -202,19 +202,19 @@ function drawString()
 {
 
 
-	const data = JSON.stringify(myFont);
-	console.log(myFont[0])
+	// const data = JSON.stringify(myFont);
+	// console.log(myFont[0])
 
-	var a = window.document.createElement('a');
-	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
-	a.download = 'font.json';
+	// var a = window.document.createElement('a');
+	// a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
+	// a.download = 'font.json';
 	
-	// Append anchor to body.
-	document.body.appendChild(a);
-	a.click();
+	// // Append anchor to body.
+	// document.body.appendChild(a);
+	// a.click();
 	
-	// Remove anchor from body
-	document.body.removeChild(a);
+	// // Remove anchor from body
+	// document.body.removeChild(a);
 
 	
 	var wordsY = [0,1] ;
@@ -247,7 +247,7 @@ function drawString()
 	    mLines = [] ;
 	    var xBegin = 1000.0 ;
 	    var xEnd = -1000.0 ;
-
+	    console.log(key, myFont[key]['numOfSplines'])
 	    for(var i = 0 ; i < myFont[key]['numOfSplines'] ; i++)
 	    {
 				var cp = myFont[key]['splines'][i] ;
