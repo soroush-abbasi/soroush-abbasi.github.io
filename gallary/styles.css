@@ -9,11 +9,11 @@ body {
 
 .gallery {
     width: 80%;
-    max-width: 800px; /* Limits the maximum width to ensure the gallery isn't too wide on large screens */
+    max-width: 1200px; /* Limits the maximum width to ensure the gallery isn't too wide on large screens */
     margin: 20px auto; /* Centers the gallery on the page with margin top and bottom */
     padding: 20px;
-    background: white; /* White background for the gallery */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the gallery */
+    background: #fff4e8; /* White background for the gallery */
+    
 }
 
 .art-piece {
