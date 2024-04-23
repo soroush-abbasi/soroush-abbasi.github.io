@@ -36,6 +36,29 @@
 		height: 2px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 	}
+
+	.gallery {
+	    width: 80%;
+	    max-width: 1200px; /* Limits the maximum width to ensure the gallery isn't too wide on large screens */
+	    margin: 20px auto; /* Centers the gallery on the page with margin top and bottom */
+	    padding: 20px;
+	    background: #fff4e8; /* White background for the gallery */
+	}
+
+	.art-piece {
+	    margin-bottom: 20px; /* Space between art pieces */
+	}
+	
+	.art-piece img {
+	    width: 100%; /* Makes the image responsive */
+	    height: auto; /* Maintains aspect ratio */
+	}
+	
+	.art-piece p {
+	    margin: 10px 0; /* Vertical margin for the text, no horizontal margin */
+	}
+
+	
 	#info-writing
 	{
 	  width:80%;
@@ -284,7 +307,6 @@
 
 
       <h2> Latent Space of My Mind </h2><hr style="margin-bottom:50px">
-		<img class="my_img" src='/images/s1.png'/>
         <h3 style="float:left; width: 100%; max-width:600px;  margin-bottom:150px ; text-align:justify">
 		Here ... 
 	</h3>
@@ -297,22 +319,18 @@
 	
 	
 
-
-
-<div class='section_div' id='Papers' style="margin-top:200px">
-
-
-
-	<table class="pub_table2" >
-
-            <p>Entropy:</p>
-	<tr>
-	 <td class="pub_td1"><div class="logo_div"><img src="https://soroush-abbasi.github.io/gallary/images/entropy.webp" alt="Artwork 1"></div></td>
-	 <h2>This is inspired by ...</h2><hr>	
-
-	</table>
-
+<div class="gallery">
+        <div class="art-piece">
+            <img src="https://soroush-abbasi.github.io/gallary/images/entropy.webp" alt="Artwork 1">
+            <h3>This is inspired by ...</h3>
+        </div>
+<!--         <div class="art-piece">
+            <img src="path_to_image2.jpg" alt="Artwork 2">
+            <p>This is the description of the second piece of art. It depicts...</p>
+        </div> -->
+        <!-- Add more art pieces in similar div blocks -->
 </div>
+
   
  
 
