@@ -1,25 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="gallery">         
-        <div class="art-piece">
-            <img src="https://soroush-abbasi.github.io/gallary/images/entropy.webp" alt="Artwork 1">
-            <p>Entropy:</p>
-        </div>
-        
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Assistant:200&display=swap" rel="stylesheet">
 
-        
-<!--         <div class="art-piece">
-            <img src="entropy.webp" alt="Artwork 2">
-            <p>From Vanity to Unity</p>
-        </div> -->
-        <!-- Add more art pieces in similar div blocks -->
-    </div>
+<title>Latent Space of My Mind</title>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#c85b00">
+<meta name="apple-mobile-web-app-title" content="Soroush">
+<meta name="application-name" content="Soroush">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#fff4e8">
+
+
+
+<style type="text/css">
+	body
+	{
+		
+		width:100%;
+		text-align: center;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-size:16px;
+		background-color: #fff4e8;
+		margin: 0;
+		padding: 0;
+	}
+	hr
+	{
+		border: 0;
+		height: 2px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+	#info-writing
+	{
+	  width:80%;
+	  margin: 10%;
+	  padding: 0px ;
+	  margin-bottom: 50% ;
+	  background-color: rgba(200, 200, 200, 0);
+	  z-index: 1;
+	}
+	div.sticky
+	{
+	  position: -webkit-sticky;
+	  position: sticky;
+	  top: 0 ;
+	  z-index: -1 ;
+	}
+
+	#canvas-container
+	{
+		margin:0 ;
+		z-index: -1;
+
+	}
+
+	table
+	{
+		padding: 5px;
+	}
+	
+	
+	#info-bio
+	{
+	  margin: 5%;
+	  padding: 0px ;
+	  height: 700px;
+	  display: inline-block;
+	}
+
+
+	table.pub_table,td.pub_td1,td.pub_td2
+	{
+		border-collapse: collapse;
+		border-bottom: 0px solid #9B9B9B;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		padding-left: 10px;
+		width: 100%;
+		display: inline-table;
+		margin-bottom: 50px;
+	}
+	
+	table.pub_table2
+	{
+		border-collapse: collapse;
+		border-bottom: 0px solid #9B9B9B;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		padding-left: 10px;
+		width: 100%;
+		display: inline-table;
+		margin-bottom: 50px;
+		min-width: 200px;
+		max-width: 700px;
+	}
+	
+	
+	td.pub_td1
+	{
+		width: 40%;
+		min-width: 300px;
+		max-width: 700px;
+	}
+	td.pub_td2
+	{
+		width: 50%;
+		min-width: 300px;
+	}
+	td.pub_td3
+	{
+		width: 200px;
+	}
+	
+	td.year_heading
+	{
+		color: #3B3B3B;
+		font-weight: 700;
+		font-size:20px;
+	}
+	tr {
+		display: table; 
+		width: 100%
+	}
+
+	div#container
+	{
+		margin-left: auto;
+		margin-right: auto;
+		width: 1200px;
+		text-align: left;
+		position: relative;
+	}
+	div#DocInfo
+	{
+		color: #9B9B9B;
+		height: 60%;
+		font-size: 80%;
+	}
+	h4,h3,h2,h1
+	{
+		color: #3B3B3B;
+	}
+	h2
+	{
+		font-size:130%;
+	}
+	p
+	{
+		color: #000;
+		margin-bottom: 20px;
+	}
+	p.caption
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 600px;
+		font:11px helvetica,sans-serif;
+	}
+	p.caption2
+	{
+		color: #9B9B9B;
+		text-align: left;
+		width: 800px;
+		font:11px helvetica,sans-serif;
+	}
+	#header_img
+	{
+		position: absolute;
+		top: 0px; right: 0px;
+	}
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	.section_div {
+		padding: 10px 10px 10px 10px;
+		margin: 10px 10px 10px 10px;
+		//border: 1px solid #AAA;
+	}
+	body {
+	}
+	#personal_info {
+		width: 100%;
+		display: initial;
+	}
+	p.announcement {
+		padding: 10px;
+		background-color: #EEE;
+	}
+	img.teaser_img {
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		border: 0px solid black
+		box-shadow: 0 0 12px 12px white inset;
+	}
+	
+	img.logo {
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		border: 0px solid black
+		box-shadow: 0 0 12px 12px white inset;
+	}
+	
+	img.photo_of_me {
+		border-radius: 0px;
+		width: 70%;
+		max-width: 200px;
+		min-width: 100px;
+	}
+	img.my_img {
+		width: 50%;
+		float: right;
+		min-width: 300px;
+		max-width: 500px; 
+	}
+	
+	div.logo_div{
+		width: 50%;
+		display: inline-block;
+		max-width: 200px;
+		min-width: 150px;
+	}
+	
+	div.contact_logo_div{
+		width: 70%;
+		display: inline-block;
+		max-width: 150px;
+	}
+	
+	div.teaser_img_div {
+		width: 100%;
+		box-shadow: 1px 1px 11px 0px grey;
+	}
+	table.personnel td {
+		padding: 16px;
+		vertical-align: top
+	}
+
+	canvas{width:100%;height:100%; background-color: #fff4e8;}
+</style>
+
+</head>
+
+
+
+<body onload="main()">
+
+	<table id="personal_info">
+
+	
+	
+	<tr>
+	<td><img class="photo_of_me" src="https://raw.githubusercontent.com/soroush-abbasi/soroush-abbasi.github.io/main/img_s.png" width=180px style=" float:left; margin-right:15px"/></td>
+	<td><br>
+	
+	<div id="DocInfo">
+		<h1>Soroush Abbasi Koohpayegani</h1>
+	</div><br>
+	</td>
+	</tr>
+
+	</table><hr>
+	
+
+
+  <div id="info-bio">
+
+
+
+      <h2> Latent Space of My Mind </h2><hr style="margin-bottom:50px">
+		<img class="my_img" src='/images/s1.png'/>
+        <h3 style="float:left; width: 100%; max-width:600px;  margin-bottom:150px ; text-align:justify">
+		Here ... 
+	</h3>
+
+	  
+
+   </div> 
+   
+
+	
+	
+
+
+
+<div class='section_div' id='Papers' style="margin-top:200px">
+
+
+
+	<table class="pub_table2" >
+
+            <p>Entropy:</p>
+	<tr>
+	 <td class="pub_td1"><div class="logo_div"><img src="https://soroush-abbasi.github.io/gallary/images/entropy.webp" alt="Artwork 1"></div></td>
+	 <h2>This is inspired by ...</h2><hr>	
+
+	</table>
+
+</div>
+  
+ 
+
+
+
+<div class='section_div' id='Papers' style="margin-top:200px">
+
+ <h2>Contacts</h2><hr>
+
+	<table class="pub_table" style="width: 90%">
+
+
+	<tr>
+	 <td class="pub_td3"><div class="contact_logo_div"><a href="https://www.youtube.com/channel/UCL-E2c0R_cuGuigA6F76Uqg"><img class="logo" src='/images/youtube.png'/></a></div></td>
+	 <td class="pub_td3"><div class="contact_logo_div"><a href="https://www.csee.umbc.edu/~soroush"><img class="logo" src='/images/Dr.mac.png'/></a></div></td>
+	 <td class="pub_td3"><div class="contact_logo_div"><a href="https://www.linkedin.com/in/soroush-abbasi-koohpayegani-5a4128ba/"><img class="logo" src='/images/linkedin.png'/></a></div></td>
+	</tr>
+
+	</table>
+
+</div>
+
+
+
+
 </body>
 </html>
