@@ -346,20 +346,76 @@ High entropy states: more likely to occur in the universe.
 		    the distribution of specific states is intricately linked to the previous distribution. For instance, the presence of life depends 
 		    on the existence of oxygen in the preceding distribution. Consequently, the probability of life increases with the presence of oxygen in the previous state.
 		    
-			    <br>
+			    <br><br>
 
 		    In the beginning, entropy is at its highest—pure random noise, with nothing known. 
 		    What does the picture look like? Just a boring noise. At the end, entropy is at its lowest, where everything is known,
 		    presenting a clear picture devoid of any room for imagination. It will remain the same boring picture from that point onwards. 
 		    Somewhere in between, where entropy is balanced, lies the middle ground of the dance between high entropy and low entropy—an exciting distribution to live in. 
 		    This represents a balance between chaos and order. These two states mirror each other, both being boring but in two different distributions.
-			    <br>
+			    <br><br>
 
 		    Some additional details: I draw inspiration from the beauty of Turquoise, as well as from this amazing video by
 		    <a href="https://www.youtube.com/watch?v=DxL2HoqLbyA." style="color: hotpink"> Derek Alexander Muller</a>.
 			    Dowload the 
 		    <a href="https://soroush-abbasi.github.io/gallary/images/entropy_poster_web.jpg" style="color: hotpink"> high resolution</a>.
 	</h3>
+        </div>
+
+
+
+
+
+	<h2> The Hourglass  </h2><hr style="margin-bottom:50px">
+        <div class="art-piece">
+            <img src="https://soroush-abbasi.github.io/gallary/images/hour_glass.jpg" alt="Artwork 2">
+            <h3 style="width: auto;  margin-left: 0px; margin-right: 0px; margin-top: 30px; margin-bottom:150px ; text-align:justify">
+			For me, machine learning involves the transfer of data distributions. At times, our focus lies in sampling from distributions, 
+		    while other times, we aim to transition from one distribution to another with desired properties. 
+		    For instance, in discriminative tasks like image classification, our goal is to map the distribution of natural images to a compact distribution where images 
+		    can be discriminated based on specific criteria. Each layer of a transformer network can represent a step that transforms the input 
+		    distribution into another distribution until reaching the final layer, where the output originates from the target distribution. 
+		    In generative models, our interest lies in sampling from specific distributions. The difficulty lies in the fact that not all distributions are equally probable to sample from.
+		    States with low entropy are rare, making them challenging to sample. Conversely, states with high entropy are common and have 
+		    a high probability of existence, making them easy to sample. 		    
+
+		    <br><br>
+		    
+		    There is an asymmetry in the difficulty between constructing something and its destruction. 		    
+		    Transitioning from a distribution with low entropy to one with high 
+		    entropy is straightforward. A random walk on states can change the state randomly, and since high entropy distributions are 
+		    more likely to occur, we eventually end up in those distributions after enough steps. Most of the distributions that we are 
+		    interested in have low entropy and are rare. Examples include the distribution of natural images, the weights of a neural network 
+		    that provide local minima of a function, and the solutions to a jigsaw puzzle. To sample from these rare distributions, we need to model them.
+
+		    <br><br>
+
+		    If we could reverse time for the destruction process, we could sample a random state and then reverse time to return to the original distribution. 
+		    However, since we don't have access to the function that performs the destruction, we cannot reverse time using the inverse of that function. 
+		    Nevertheless, we might be able to learn the reverse process by parameterizing that function with a deep neural network. 
+		    This entails learning to reverse time. 
+
+		    <br><br>
+		    
+		    To learn the reverse process, we require data. We can sample from the target distribution and elevate the entropy within them through
+		    destructive steps. After a few iterations, this process transitions the distribution to one with a higher probability of existence. 
+		    Subsequently, we aim to learn to reverse this process—a function that, when given a high entropy distribution, transfers it to a 
+		    lower entropy distribution, where it is more likely to sample instances within the target distribution. The critical aspect here is the ability to sample from the target distribution.
+
+		    <br><br>
+		    In general, I'm deeply intrigued by discovering all artifacts with the lowest entropy in the universe and model the distribution.
+		    To appreciate the remarkable nature of a low entropy states, consider the probability of you, as a human, 
+		    existing and reading this webpage on your computer, given the initial state of the universe—a universe with maximum
+		    entropy and pure randomness of basis elements (I don't know what the basis elements are, possibly strings in string theory?).
+
+		    <br><br>
+		    The hourglass is similar to UNet and is a destruction function. Sands on top part can be from any distribution. As soon as you put it on top and run the function, it 
+		    transfer any distribution to normal distribution on the bottom part. If I have the power I would sample from universe and put it on top of the hourglass and learn the reverse
+		    function. 
+		    
+
+		    
+		</h3>
         </div>
 <!--         <div class="art-piece">
             <img src="path_to_image2.jpg" alt="Artwork 2">
