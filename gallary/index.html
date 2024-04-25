@@ -338,7 +338,7 @@
 		    Ff we look closely, we can observe that distribution transfer occurs in nature as well. For instance, trees transport elements from the soil to form 
 		    complex structures like leaves and fruits. Overall, nature consistently shifts distributions from higher entropy to lower entropy states. 
 
-		    <br>
+		    <br><br>
 		    Here is my definition of entropy for a state. Low entropy states: less likely to occur in the universe.
 High entropy states: more likely to occur in the universe.
 
@@ -383,14 +383,14 @@ High entropy states: more likely to occur in the universe.
 		    
 		    There is an asymmetry in the difficulty between constructing something and its destruction. 		    
 		    Transitioning from a distribution with low entropy to one with high 
-		    entropy is straightforward. A random walk on states can change the state randomly, and since high entropy distributions are 
+		    entropy is straightforward. A random walk on states can increase the entropy, and since high entropy distributions are 
 		    more likely to occur, we eventually end up in those distributions after enough steps. Most of the distributions that we are 
 		    interested in have low entropy and are rare. Examples include the distribution of natural images, the weights of a neural network 
-		    that provide local minima of a function, and the solutions to a jigsaw puzzle. To sample from these rare distributions, we need to model them.
+		    that provide local minima of a function, or the solutions to a jigsaw puzzle. To sample from these rare distributions, we need to model the distribution.
 
 		    <br><br>
 
-		    If we could reverse time for the destruction process, we could sample a random state and then reverse time to return to the original distribution. 
+		    If we could reverse time for the destruction process, we could sample a from a known distribution with high entropy (e.g., guassian noise) and then reverse time to return to the original distribution. 
 		    However, since we don't have access to the function that performs the destruction, we cannot reverse time using the inverse of that function. 
 		    Nevertheless, we might be able to learn the reverse process by parameterizing that function with a deep neural network. 
 		    This entails learning to reverse time. 
@@ -398,7 +398,7 @@ High entropy states: more likely to occur in the universe.
 		    <br><br>
 		    
 		    To learn the reverse process, we require data. We can sample from the target distribution and elevate the entropy within them through
-		    destructive steps. After a few iterations, this process transitions the distribution to one with a higher probability of existence. 
+		    destructive steps. With a carefully designed distructive steps, after a few iterations, this process transitions the distribution to known distribution with a higher probability of existence. 
 		    Subsequently, we aim to learn to reverse this process—a function that, when given a high entropy distribution, transfers it to a 
 		    lower entropy distribution, where it is more likely to sample instances within the target distribution. The critical aspect here is the ability to sample from the target distribution.
 
@@ -406,12 +406,16 @@ High entropy states: more likely to occur in the universe.
 		    In general, I'm deeply intrigued by discovering all artifacts with the lowest entropy in the universe and model the distribution.
 		    To appreciate the remarkable nature of a low entropy states, consider the probability of you, as a human, 
 		    existing and reading this webpage on your computer, given the initial state of the universe—a universe with maximum
-		    entropy and pure randomness of basis elements (I don't know what the basis elements are, possibly strings in string theory?).
+		    entropy and pure randomness of basis elements.
 
 		    <br><br>
-		    The hourglass is similar to UNet and is a destruction function. Sands on top part can be from any distribution. As soon as you put it on top and run the function, it 
+		    The hourglass is similar to UNet and is a destruction function. Sands on top part can be from any distribution. As soon as you put a sample from target distribution on top and run the function, it 
 		    transfer any distribution to normal distribution on the bottom part. If I have the power I would sample from universe and put it on top of the hourglass and learn the reverse
 		    function. 
+
+		    The hourglass, is similar to UNet, serves as a destruction function. The sands on the top part can originate from any distribution.
+		    Once a sample from the target distribution is placed on top and the function is executed, it transforms any distribution into 
+		    a normal-like distribution on the bottom part. I wish I could sample from the universe and place it atop the hourglass and learn the reverse function.
 		    
 
 		    
