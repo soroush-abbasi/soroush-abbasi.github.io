@@ -359,7 +359,7 @@
 
 		    Some additional details: I draw inspiration from the beauty of Turquoise, and this amazing video by
 		    <a href="https://www.youtube.com/watch?v=DxL2HoqLbyA." style="color: hotpink"> Derek Alexander Muller</a>.
-			    Dowload the 
+			    Download the 
 		    <a href="https://soroush-abbasi.github.io/gallary/images/entropy_poster_web.jpg" style="color: hotpink"> high resolution</a>.
 	</p>
         </div>
@@ -372,23 +372,30 @@
         <div class="art-piece">
             <img src="https://soroush-abbasi.github.io/gallary/images/hour_glass.jpg" alt="Artwork 2">
             <p style="width: auto;  margin-left: 0px; margin-right: 0px; margin-top: 30px; margin-bottom:150px ; text-align:justify">
-			For me, machine learning involves the transfer of data distributions. At times, our focus lies in sampling from distributions, 
-		    while other times, we aim to transition from one distribution to another with desired properties. 
-		    For instance, in discriminative tasks like image classification, our goal is to map the distribution of natural images to a compact distribution where images 
+		    
+		    For me, machine learning involves the transfer of data distributions. Sometimes, our interest lies in sampling from a distribution, 
+		    while at other times, we aim to transfer one distribution to another with desired properties.
+		    
+		    For instance, in discriminative tasks like image classification, our goal is to transfer the distribution of natural images to a compact distribution where images 
 		    can be discriminated based on specific criteria. Each layer of a transformer network can represent a step that transforms the input 
-		    distribution into another distribution until reaching the final layer, where the output originates from the target distribution. 
-		    In generative models, our interest lies in sampling from specific distributions. The difficulty lies in the fact that not all distributions are equally probable to sample from.
-		    States with low entropy are rare, making them challenging to sample. Conversely, states with high entropy are common and have 
-		    a high probability of existence, making them easy to sample. 		    
+		    distribution into another distribution until reaching the final layer, where the output is from the target distribution. 
+		    
+<!-- 		    To learn these distributions, we can utilize generative models to model them.  -->
+		    In generative models, our interest lies in sampling from specific distribution. 
+		    The difficulty lies in the fact that not all distributions are equally probable to sample from, and we need to sample from those distributions to train generative models. 
+		    Structures with high complexity (low entropy) are typically rare because their existence is conditioned on previous distributions. As a result, sampling them presents a challenge.
+		    Conversely, structures with low complexity (high entropy) are usually common and have a high probability of existence, thus making them easy to sample.
+		    Most of the distributions that we are 
+		    interested in have low entropy and are rare. Examples include the distribution of natural images, the weights of a neural network 
+		    that provide minima of a function, or the solutions to a puzzle (e.g., jigsaw, rubik's cube). 
 
 		    <br><br>
 		    
-		    There is an asymmetry in the difficulty between constructing something and its destruction. 		    
+		    There is an asymmetry in the difficulty between constructing a complex structure and its destruction. 		    
 		    Transitioning from a distribution with low entropy to one with high 
-		    entropy is straightforward. A random walk on states can increase the entropy, and since high entropy distributions are 
-		    more likely to occur, we eventually end up in those distributions after enough steps. Most of the distributions that we are 
-		    interested in have low entropy and are rare. Examples include the distribution of natural images, the weights of a neural network 
-		    that provide local minima of a function, or the solutions to a jigsaw puzzle. To sample from these rare distributions, we need to model the distribution.
+		    entropy is straightforward. A random walk on states can increase the entropy and remove information, and since high entropy distributions are 
+		    more likely to occur, we eventually end up in those distributions after enough steps. 
+		    For example, if we randomly change the state of a Rubik's Cube or add random noise to an image, eventually we end up with a state where the entropy is high and the appearance resembles noise.
 
 		    <br><br>
 
@@ -399,13 +406,13 @@
 
 		    <br><br>
 		    
-		    To learn the reverse process, we require data. We can sample from the target distribution and elevate the entropy within them through
-		    destructive steps. With a carefully designed distructive steps, after a few iterations, this process transitions the distribution to known distribution with a higher probability of existence. 
-		    Subsequently, we aim to learn to reverse this process—a function that, when given a high entropy distribution, transfers it to a 
-		    lower entropy distribution, where it is more likely to sample instances within the target distribution. The critical aspect here is the ability to sample from the target distribution.
+		    To learn the reverse process, we need data. We can sample from the target distribution and elevate the entropy within them through
+		    destructive steps. With a carefully designed distructive steps, after a few iterations, this process transfer target distribution to known distribution. 
+		    Subsequently, we aim to learn to reverse this process—a function that, when given a known distribution, transfers it to the target distribution. 
+		    The critical aspect here is the ability to sample from the target distribution.
 
 		    <br><br>
-		    In general, I'm deeply intrigued by discovering all artifacts with the lowest entropy in the universe and model the distribution.
+		    In general, I'm deeply intrigued by discovering all complex structures with the lowest entropy in the universe and model the distribution.
 		    To appreciate the remarkable nature of a low entropy states, consider the probability of you, as a human, 
 		    existing and reading this webpage on your computer, given the initial state of the universe—a universe with maximum
 		    entropy and pure randomness of basis elements.
@@ -414,7 +421,7 @@
 
 		    The hourglass, is similar to UNet, serves as a destruction function. The sands on the top part can originate from any distribution.
 		    Once a sample from the target distribution is placed on top and the function is executed, it transforms any distribution into 
-		    a normal-like distribution on the bottom part. I wish I could sample from the universe and place it atop the hourglass and learn the reverse function.
+		    a normal-like distribution on the bottom part, a know distribution. I wish I could sample from the universe and place it atop the hourglass and learn the reverse function.
 		    
 
 		    
